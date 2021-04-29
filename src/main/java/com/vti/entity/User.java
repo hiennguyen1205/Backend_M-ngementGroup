@@ -17,7 +17,7 @@ import org.hibernate.annotations.Formula;
 import com.vti.dto.UserDTO;
 
 @Entity
-@Table(name = "User", catalog = "TestingSystemExam")
+@Table(name = "User", catalog = "heroku_f072dd1702be2e8")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;

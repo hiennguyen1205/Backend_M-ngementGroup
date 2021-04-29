@@ -41,27 +41,27 @@ public class GroupController {
 			GroupFilter filter, 
 			@RequestParam(name = "search", required = false) String search) {
 		
-//		Page<Group> pageGroups = service.getAllGroups(pageable, filter, search);
-//		
-//		Page<GroupDTO> pageGroupDTO = pageGroups.map(new Function<Group, GroupDTO>() {
-//			@Override
-//			public GroupDTO apply(Group group) {
-//				GroupDTO groupDTO = new GroupDTO(group.getGroupID(), group.getName(), group.getMember(), group.getCreateDate(), group.getCreator().getUserID(), group.getCreator());
-//				return groupDTO;
-//			}
-//		});
-//		return pageGroupDTO;
+		Page<Group> pageGroups = service.getAllGroups(pageable, filter, search);
+		
+		Page<GroupDTO> pageGroupDTO = pageGroups.map(new Function<Group, GroupDTO>() {
+			@Override
+			public GroupDTO apply(Group group) {
+				GroupDTO groupDTO = new GroupDTO(group.getGroupID(), group.getName(), group.getMember(), group.getCreateDate(), group.getCreator().getUserID(), group.getCreator());
+				return groupDTO;
+			}
+		});
+		return pageGroupDTO;
 		
 		//test deploy on  heroku
-		List<GroupDTO> lstGroupsDTO = new ArrayList<>();
-		GroupDTO group1 = new GroupDTO((short) 1, "Group 1", 11, null, (short) 2, null);
-		GroupDTO group2 = new GroupDTO((short) 2, "Group 2", 12, null, (short) 3, null);
-		GroupDTO group3 = new GroupDTO((short) 3, "Group 3", 13, null, (short) 4, null);
-		lstGroupsDTO.add(group1);
-		lstGroupsDTO.add(group2);
-		lstGroupsDTO.add(group3);
-		Page<GroupDTO> pageGroupDTO = new PageImpl<>(lstGroupsDTO, pageable, lstGroupsDTO.size());
-		return pageGroupDTO;
+//		List<GroupDTO> lstGroupsDTO = new ArrayList<>();
+//		GroupDTO group1 = new GroupDTO((short) 1, "Group 1", 11, null, (short) 2, null);
+//		GroupDTO group2 = new GroupDTO((short) 2, "Group 2", 12, null, (short) 3, null);
+//		GroupDTO group3 = new GroupDTO((short) 3, "Group 3", 13, null, (short) 4, null);
+//		lstGroupsDTO.add(group1);
+//		lstGroupsDTO.add(group2);
+//		lstGroupsDTO.add(group3);
+//		Page<GroupDTO> pageGroupDTO = new PageImpl<>(lstGroupsDTO, pageable, lstGroupsDTO.size());
+//		return pageGroupDTO;
 		
 	}
 

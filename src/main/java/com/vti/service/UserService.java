@@ -5,9 +5,9 @@ package com.vti.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+//import org.springframework.security.core.authority.AuthorityUtils;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.vti.entity.User;
@@ -59,20 +59,20 @@ public class UserService implements IUserService{
 		return false;
 	}
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = repository.findByUsername(username);
-		
-		if(user == null) {
-			throw new UsernameNotFoundException(username);
-		}
-		
-		//AuthorityUtils.createAuthorityList(user.getRole())
-		//không để role thì bỏ user.getRole()
-		return new org.springframework.security.core.userdetails.User(
-				user.getUsername(), 
-				user.getPassword(), 
-				AuthorityUtils.createAuthorityList(user.getRole()));
-	}
+//	@Override
+//	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//		User user = repository.findByUsername(username);
+//		
+//		if(user == null) {
+//			throw new UsernameNotFoundException(username);
+//		}
+//		
+//		//AuthorityUtils.createAuthorityList(user.getRole())
+//		//không để role thì bỏ user.getRole()
+//		return new org.springframework.security.core.userdetails.User(
+//				user.getUsername(), 
+//				user.getPassword(), 
+//				AuthorityUtils.createAuthorityList(user.getRole()));
+//	}
 
 }

@@ -20,7 +20,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import com.vti.dto.GroupDTO;
 
 @Entity
-@Table(name = "Group")
+@Table(name = "Group", catalog = "heroku_f072dd1702be2e8")
 public class Group implements Serializable {
 
 	private static final long serialVersionUID = 1L;

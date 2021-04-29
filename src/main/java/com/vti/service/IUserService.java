@@ -5,12 +5,12 @@ package com.vti.service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-//import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import com.vti.entity.User;
 
-//public interface IUserService extends UserDetailsService{
-public interface IUserService{
+public interface IUserService extends UserDetailsService{
+//public interface IUserService{
 	Page<User> getListUsers(Pageable pageable);//int page, int pageSize, String fieldName, String type);
 
 	User getUserById(short id);
